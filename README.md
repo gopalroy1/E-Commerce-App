@@ -2,13 +2,32 @@
 
 Welcome to the E-Commerce App, a full-fledged online shopping platform developed using the MERN stack (MongoDB, Express, React, Node.js). This app provides a seamless shopping experience, allowing users to explore products, add items to their cart, and securely complete purchases. With an intuitive admin panel, managing products, categories, and orders is a breeze.
 
-## Features
+### General Features
 
-- **User Authentication:** Users can sign up, log in, and update their profiles.
-- **Product Search and Filtering:** Easily search for products and apply filters for efficient browsing.
-- **Cart Functionality:** Add products to your cart and proceed to checkout seamlessly.
-- **Order Management:** View order history and manage past purchases.
-- **Admin Panel:** Dedicated panel for managing products, users, and orders.
+- **User Authentication:** Sign up, log in, and update your profile with ease.
+- **Effortless Product Search:** Find your desired products quickly with our search and filtering options.
+- **Seamless Cart Functionality:** Add products to your cart and proceed to checkout with just a few clicks.
+- **Responsive Design:** Enjoy a consistent shopping experience on all devices.
+- **Product Viewing:** View detailed product information and images.
+
+### User-Specific Features
+
+Enjoy these additional features tailored just for our users:
+
+- **Order Placement:** Place new orders and view your order history.
+- **Checkout Management:** Review and edit the items in your cart before making a purchase.
+- **Profile Customization:** Change profile information and update your password.
+- **Order Management:** Cancel orders and request refunds.
+
+### Admin Features
+
+As an admin, you will get full control with these powerful features:
+
+- **Product Management:** Add, edit, and remove products from the inventory.
+- **Category Management:** Create and manage product categories.
+- **User Management:** Monitor and manage user accounts and information.
+- **Order Management:** View and process orders efficiently.
+
 
 ## Tech Stack
 
@@ -18,10 +37,9 @@ The application was built using the following technologies:
 - HTML & CSS: Responsible for structuring and styling the web pages.
 
 ## Screenshots
+![Screenshot (39)](https://github.com/gopalroy1/E-Commerce-App/assets/105766337/584f6938-95eb-45eb-9ede-34871154b106)
 
-![Screenshot 1](path/to/screenshot-1.png)
-![Screenshot 2](path/to/screenshot-2.png)
-![Screenshot 3](path/to/screenshot-3.png)
+
 
 ## Live Demo
 
@@ -31,7 +49,7 @@ Experience the E-Commerce App yourself by checking out the live website: [Live D
 
 To run the application locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/Ecommerce-App.git`
+1. Clone the repository: `git clone [https://github.com/gopalroy1/E-Commerce-App.git]`
 2. Change to the project directory: `cd Ecommerce-App`
 3. Install dependencies: `npm install`
 4. Create a `.env` file in the root directory and add the necessary environment variables (such as PORT,DEV_MODE,MONGO_URL,TOKEN_GENERATE) and in frontend add(REACT_APP_API).
