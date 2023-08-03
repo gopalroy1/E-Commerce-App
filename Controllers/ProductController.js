@@ -65,12 +65,42 @@ export const getAllProduct=async(req,res)=>{
 
 }
 //Get
-//url: /get/
-//param product slug coming
+//url: /val
+//search val data coming in req params
+export const getSearchProducts=async(req,res)=>{
+
+    try {
+        const {val} = req.params
+        //Use kr rhe hai or operator 
+        //Regex se search kr rhe hai 
+        //options i mtlan case insensitive
+        //Select to unselect photos
+        const productList = await ProductModel.find({
+            $or: [
+                {name:{ $regex :val, $options:"i"}},
+                {description:{ $regex :val, $options:"i"}}
+            ]
+        }).select("-photo");
+        res.status(200).json({
+            status:true,
+            message:"All product fetched sucessfully",
+            productLength:productList.length,
+            productList,
+            
+        })
+    
+    } catch (error) {
+        res.status(500).json({status:false,message:"Error in searching products : error is ",errorIs:error})
+    }
+
+}
+//Get
+//url: /get/id
+//param product id coming
 export const getSingleProduct=async(req,res)=>{
 
     try {
-        const {slug}= req.params;
+        const {id}= req.params;
         const product = await ProductModel.findOne({slug}).populate("category").select("-photo");
         res.status(200).json({
             status:true,
