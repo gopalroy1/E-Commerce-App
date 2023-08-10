@@ -6,7 +6,8 @@ import Jwt from "jsonwebtoken";
 export const registerController = async (req, res) => {
   console.log("function chala");
   //Checking user input details
-  const { name, email, password, phone, address, role } = req.body;
+  let { name, email, password, phone, address, role } = req.body;
+  email= email.toLowerCase();
   if (!name || !email || !phone || !address || !password) {
     res.status(400).json({
       status: "failed",
@@ -58,7 +59,8 @@ export const registerController = async (req, res) => {
         //For Log in
         // POST url: "./login"
 export const userLogIn = async (req, res) => {
-  const { email, phone, password} = req.body;
+  let { email, phone, password} = req.body;
+  email = email.toLowerCase();
   //Handling errors
   if (!email && !phone) {
     res.status(400).json({

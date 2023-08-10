@@ -50,12 +50,12 @@ export const addProduct=async(req,res)=>{
 export const getAllProduct=async(req,res)=>{
 
     try {
-        const product = await ProductModel.find({}).populate('category').select("-photo").limit(12).sort({createdAt:-1});
+        const product = await ProductModel.find({}).select("-photo").sort({createdAt:-1});
         res.status(200).json({
             status:true,
             message:"All product fetched sucessfully",
             productLength:product.length,
-            product,
+            productList:product
             
         })
     
