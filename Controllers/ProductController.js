@@ -48,21 +48,17 @@ export const addProduct=async(req,res)=>{
 //url: /getall
 //no data coming
 export const getAllProduct=async(req,res)=>{
-
     try {
-        const product = await ProductModel.find({}).select("-photo").sort({createdAt:-1});
+        const product = await ProductModel.find({}).select("-photo").populate("category").sort({createdAt:-1});
         res.status(200).json({
             status:true,
             message:"All product fetched sucessfully",
             productLength:product.length,
-            productList:product
-            
+            productList:product,
         })
-    
     } catch (error) {
         res.status(500).json({status:false,message:"Error in getting product : error is "+error})
     }
-
 }
 //Get
 //url: /val
@@ -101,7 +97,8 @@ export const getSingleProduct=async(req,res)=>{
 
     try {
         const {id}= req.params;
-        const product = await ProductModel.findOne({slug}).populate("category").select("-photo");
+        const product = await ProductModel.findById(id).populate("category").select("-photo");
+        // const product = await ProductModel.findOne().populate("category").select("-photo");
         res.status(200).json({
             status:true,
             message:"The product fetched sucessfully",
@@ -110,7 +107,7 @@ export const getSingleProduct=async(req,res)=>{
         })
     
     } catch (error) {
-        res.status(500).json({status:false,message:"Error in getting a product : error is "+error})
+        res.status(500).json({status:false,message:"Error in getting a product : error is ",error})
     }
 
 }
