@@ -32,7 +32,7 @@ const ProductModel = new mongoose.Schema({
     },
     shipping:{
         type:Boolean,
-
+        default:true,
     }
 
 
